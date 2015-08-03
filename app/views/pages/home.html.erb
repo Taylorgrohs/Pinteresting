@@ -1,5 +1,37 @@
 
 <div class="jumbotron">
-	<h1>Welcome to my app!</h1>
-	<p>Click here to <%= link_to "Sign up", sign_up_path, class: "btn btn-primary btn-lg" %>.</p>
+	<h1 align="center">Welcome to my app!</h1>
+	<p align="center">
+	<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Log in
+</button>
+<%= link_to "Sign up", sign_up_path, class: "btn btn-primary btn-lg" %></p>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Log in</h4>
+      </div>
+    <div class="modal-body">
+        <div class="input-group input-group-lg">
+ 		 <span class="input-group-addon" id="sizing-addon1">Username</span>
+		  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+	</div>
+	<div class="input-group input-group-lg">
+ 		 <span class="input-group-addon" id="sizing-addon1">Password</span>
+  		<input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
+	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<%= link_to "Log in", "#", class: "btn btn-primary btn-lg" %> -->
+
 </div>
