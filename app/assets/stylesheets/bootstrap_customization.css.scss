@@ -1,12 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
-$font-family: Lato;
-$body-bg:   #3498db;
-$navbar-inverse-bg: #2c3e50;
-$navbar-inverse-link-color:  #ecf0f1;
+$font-family-san-serif:   'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height: 45px;
+$navbar-default-brand-color: #c0392b;
+$body-bg:   #ecf0f1;
+$navbar-default-bg: White;
+$navbar-default-link-color:  #c0392b;
 $link-color: #2c3e50;
-$brand-primary: #9b59b6;
-$jumbotron-bg: #bdc3c7; 
-$text-color: #2c3e50;
+$brand-primary: #c0392b;
+$jumbotron-bg: White; 
 @import 'bootstrap';
 .center {
 	text-align: center;
