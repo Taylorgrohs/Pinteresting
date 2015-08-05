@@ -10,7 +10,7 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def new
-    @pin = current_user.pins.new
+    @pin = current_user.pins.build
   end
 
   def edit
@@ -36,7 +36,6 @@ before_action :authenticate_user!, except: [:index, :show]
     @pin.destroy
     respond_to do |format|
       format.html { redirect_to pins_url, notice: 'Pin was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -52,6 +51,6 @@ before_action :authenticate_user!, except: [:index, :show]
   end
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 end
