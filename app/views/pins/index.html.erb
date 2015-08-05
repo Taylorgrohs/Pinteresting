@@ -1,8 +1,10 @@
 <div id="pins" class="transitions-enabled">
 <% @pins.each do |pin| %>
      <div class="box panel panel-primary">
-     <div class="panel-body"> 
+     
+        <div class="panel-header" align="center">
         <%= pin.user.email if pin.user %>
+        </div> <div class="panel-body" align="center">
         <%= pin.description %>
         <%= image_tag pin.image.url(:thumb) %>
         <%= link_to 'Show', pin_path(pin), class: "btn btn-primary btn-sm" %>
