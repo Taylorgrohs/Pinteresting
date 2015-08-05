@@ -18,10 +18,12 @@ gem 'bootstrap-sass'
 gem 'devise', '~> 3.1.0.rc2'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk',  '~> 1.20.0'
+gem 'masonry-rails', '~> 0.2.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
