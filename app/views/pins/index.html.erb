@@ -3,14 +3,17 @@
      <div class="box panel panel-primary">
      
         <div class="panel-header" align="center">
-        <%= pin.user.email if pin.user %>
-        </div> <div class="panel-body" align="center">
-        <%= pin.description %>
-        <%= image_tag pin.image.url(:thumb) %>
+       <h6><%= pin.user.email if pin.user %></h6>   
+        </div> 
+        <div class="panel-body" align="center">
+        <%= link_to image_tag(pin.image.url(:thumb)), pin %>
+        <div>
+        <strong>"<%= pin.description %>"</strong>
+        </div>  
         <%= link_to 'Show', pin_path(pin), class: "btn btn-primary btn-sm" %>
         <% if pin.user == current_user %>
         <%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-primary btn-sm" %>
-        <%= link_to 'delete', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>
+        <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>
         <% end %>
     </div>
      </div> 

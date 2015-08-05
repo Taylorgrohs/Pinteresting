@@ -1,11 +1,22 @@
-<%= image_tag @pin.image.url %>
+
+<%= link_to 'Back', pins_path %>
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="panel panel-primary">
+			<div class="panel-heading" align="center">
+<%= image_tag @pin.image.url(:medium) %>
+</div>
+			<div class="panel-body">
 
 <p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
+  <strong>
+  "<%= @pin.description %>"</strong>
 </p>
 
 <% if @pin.user == current_user %>
 <%= link_to 'Edit', edit_pin_path(@pin) %> |
 <% end %>
-<%= link_to 'Back', pins_path %>
+</div>
+</div>
+</div>
+</div>
