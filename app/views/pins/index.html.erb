@@ -5,10 +5,10 @@
         <%= pin.user.email if pin.user %>
         <%= pin.description %>
         <%= image_tag pin.image.url(:thumb) %>
-        <%= link_to 'Show', pin_path(pin) %>
+        <%= link_to 'Show', pin_path(pin), class: "btn btn-primary btn-sm" %>
         <% if pin.user == current_user %>
-        <%= link_to 'Edit', edit_pin_path(pin) %>
-        <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-primary btn-sm" %>
+        <%= link_to 'delete', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>
         <% end %>
     </div>
      </div> 
