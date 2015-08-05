@@ -10,7 +10,7 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def new
-    @pin = current_user.pins.build
+    @pin = current_user.pins.new
   end
 
   def edit
