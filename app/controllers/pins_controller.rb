@@ -36,7 +36,7 @@ before_action :authenticate_user!, except: [:index, :show]
     @pin.destroy
     respond_to do |format|
       format.html { redirect_to pins_url, notice: 'Pin was successfully destroyed.' }
-    end
+    end 
   end
 
   private
