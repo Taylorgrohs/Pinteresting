@@ -39,7 +39,10 @@
           <% end %>
         </li>
         <% else %>
-        <li><%= link_to "Sign in", new_user_session_path %></li>
+        <li><%= link_to new_user_session_path do %>
+          <span class="glyphicon glyphicon-circle-arrow-up"></span> Sign in
+          <% end %>
+        </li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

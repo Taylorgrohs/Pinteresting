@@ -1,22 +1,13 @@
-<div class="panel panel-primary">
+
 
 <div class="jumbotron center">
 	<h1>Welcome to my app!</h1>
-</div>	
 
-
-
-
-<% if user_signed_in? %>
-<p align="center">
-<%= link_to "Pins", pins_path, class: "btn btn-primary btn-lg" %>
-</p>
-<% else %>
   <p align="center">
  <%= link_to "Log in", new_user_session_path, class: "btn btn-primary btn-lg" %>
 
 <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
-<% end %>
+
 
 
 </div>
