@@ -10,8 +10,8 @@
   <strong>
   "<%= @pin.description %>"</strong>
 </p>
-<p>
-<%= @pin.user.email.capitalize %>
+<p>-
+<%= @pin.user.name.capitalize %>
 </p>
 <% if @pin.user == current_user %>
 <%= link_to edit_pin_path(@pin),  class: "btn btn-primary" do %> 

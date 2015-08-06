@@ -11,7 +11,7 @@
                <strong>"<%= pin.description %>"</strong>
 
         <div>
-        <h6><%= pin.user.email.capitalize if pin.user %></h6></div>  
+        <h6>-<%= pin.user.name.capitalize if pin.user %></h6></div>  
         <% if pin.user == current_user %>
         <%= link_to edit_pin_path(pin) do %>
             <span class="glyphicon glyphicon-edit"></span>Edit        
