@@ -3,15 +3,15 @@
 <div id="pins" class="transitions-enabled">
 <% @pins.each do |pin| %>
      <div class="box panel panel-primary">
-     
-        <div class="panel-header" align="center">
-       <h6><%= pin.user.email if pin.user %></h6>   
+     <div class="panel-header" align="center">
+        <%= link_to image_tag(pin.image.url(:medium)), pin %>
+           
         </div> 
-        <div class="panel-body" align="center">
-        <%= link_to image_tag(pin.image.url(:thumb)), pin %>
+        <div class="panel-body" align="left">
+               <strong>"<%= pin.description %>"</strong>
+
         <div>
-        <strong>"<%= pin.description %>"</strong>
-        </div>  
+        <h6><%= pin.user.email.capitalize if pin.user %></h6></div>  
         <% if pin.user == current_user %>
         <%= link_to edit_pin_path(pin) do %>
             <span class="glyphicon glyphicon-edit"></span>Edit        

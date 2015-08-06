@@ -1,10 +1,8 @@
-
-
 <div class="row">
-	<div class="col-md-offset-2 col-md-8">
+	<div align="center">
 		<div class="panel panel-primary">
 			<div class="panel-heading" align="center">
-<%= image_tag @pin.image.url(:medium) %>
+<%= image_tag @pin.image.url(:thumb) %>
 </div>
 			<div class="panel-body">
 
@@ -12,7 +10,9 @@
   <strong>
   "<%= @pin.description %>"</strong>
 </p>
-
+<p>
+<%= @pin.user.email.capitalize %>
+</p>
 <% if @pin.user == current_user %>
 <%= link_to edit_pin_path(@pin),  class: "btn btn-primary" do %> 
 <span class="glyphicon glyphicon-edit"></span>Edit
