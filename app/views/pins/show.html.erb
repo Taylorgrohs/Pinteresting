@@ -1,5 +1,5 @@
 
-<%= link_to 'Back', pins_path %>
+
 <div class="row">
 	<div class="col-md-offset-2 col-md-8">
 		<div class="panel panel-primary">
@@ -8,14 +8,20 @@
 </div>
 			<div class="panel-body">
 
-<p>
+<p align="center">
   <strong>
   "<%= @pin.description %>"</strong>
 </p>
 
 <% if @pin.user == current_user %>
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
+<%= link_to edit_pin_path(@pin),  class: "btn btn-primary" do %> 
+<span class="glyphicon glyphicon-edit"></span>Edit
 <% end %>
+ |
+<% end %>
+ <%= link_to pins_path, class: "btn btn-primary" do %>
+ <span class="glyphicon glyphicon-arrow-left"></span> Back
+ <% end %>
 </div>
 </div>
 </div>

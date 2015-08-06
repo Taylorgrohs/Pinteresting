@@ -10,10 +10,14 @@
         <div>
         <strong>"<%= pin.description %>"</strong>
         </div>  
-        <%= link_to 'Show', pin_path(pin), class: "btn btn-primary btn-sm" %>
         <% if pin.user == current_user %>
-        <%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-primary btn-sm" %>
-        <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>
+        <%= link_to edit_pin_path(pin) do %>
+            <span class="glyphicon glyphicon-edit"></span>Edit        
+        <% end %>
+         |
+        <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <span class="glyphicon glyphicon-trash"></span> Delete
+        <% end %>
         <% end %>
     </div>
      </div> 
