@@ -41,6 +41,9 @@ before_action :authenticate_user!, except: [:index, :show]
 
   private
     # Use callbacks to share common setup or constraints between actions.
+def note_params
+  params.require(:note).permit(:what, :ever)
+end
     def set_pin
       @pin = Pin.find(params[:id])
     end
@@ -51,6 +54,6 @@ before_action :authenticate_user!, except: [:index, :show]
   end
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description, :image)
+      params.require(:pin).permit(:description, :image, :comment)
     end
 end

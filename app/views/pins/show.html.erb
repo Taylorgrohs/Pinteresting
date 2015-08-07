@@ -2,17 +2,17 @@
 	<div align="center">
 		<div class="panel panel-primary">
 			<div class="panel-heading" align="center">
+				 
 <%= image_tag @pin.image.url(:medium) %>
 </div>
 			<div class="panel-body">
 
 <p align="center">
-  <strong>
-  "<%= @pin.description %>"</strong>
+  <strong>"<%= @pin.description %>"</strong>
 </p>
-<p>-
-<%= @pin.user.name.capitalize %>
-</p>
+
+
+
 <% if @pin.user == current_user %>
 <%= link_to edit_pin_path(@pin),  class: "btn btn-primary" do %> 
 <span class="glyphicon glyphicon-edit"></span>Edit
@@ -26,3 +26,20 @@
 </div>
 </div>
 </div>
+<div id="comments">
+<% @pin.comments.each do |comment| %>
+    <div class="comment">
+        <%= current_user.name %> - <b>"<%= comment.body %>"</b>
+    </div>
+<% end %>
+<h2>Add a comment</h2>
+<%= form_for ([@pin, @pin.comments.build]) do |f| %>
+	<div class="field">
+		<%= f.label :body %><br />
+		<%= f.text_area :body %>
+	</div>
+	<div class="action">
+		<%= f.submit %>
+	</div>
+<% end %>
+
