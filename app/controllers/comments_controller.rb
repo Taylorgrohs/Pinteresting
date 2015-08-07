@@ -1,4 +1,9 @@
 class CommentsController < ApplicationController
+	def new
+    @pin = current_user.pins.build
+  end
+
+
 	def create
   @pin = Pin.find(params[:pin_id])
   @comment = @pin.comments.create(comment_params)
@@ -18,7 +23,7 @@ class CommentsController < ApplicationController
 end
 
 	def comment_params
-		params.require(:comment).permit(:body, :pin, :destroy)
+		params.require(:comment).permit(:body, :pin, :destroy, :commenter)
 	end
 	end
 
