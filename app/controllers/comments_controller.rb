@@ -7,11 +7,11 @@ class CommentsController < ApplicationController
   else
     flash.now[:danger] = "error"
   end
-
-    def destroy
+	def destroy
     @pin = Pin.find(params[:comment])
-    @comment = @pin.comments.find(params[:id])
-    @comment.destroy
+@comment = @pin.comments.find(params[:id])
+###PRINT OUT @comment here ###
+@comment.destroy
     redirect_to pin_path(@pin)
   end
 
