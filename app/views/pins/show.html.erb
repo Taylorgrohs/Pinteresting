@@ -30,6 +30,10 @@
 <% @pin.comments.each do |comment| %>
     <div class="comment">
         <%= current_user.name %> - <b>"<%= comment.body %>"</b>
+       <span class='actions'> 
+        <%= link_to 'Delete', [@pin, comment], :confirm => 'Are 
+you sure?', :method => :delete %> 
+     
     </div>
 <% end %>
 <h2>Add a comment</h2>
@@ -42,4 +46,3 @@
 		<%= f.submit %>
 	</div>
 <% end %>
-
