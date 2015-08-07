@@ -10,7 +10,9 @@
 <p align="center">
   <strong>"<%= @pin.description %>"</strong>
 </p>
-
+<p>
+	-<%= @pin.user.name %>
+</p>
 
 
 <% if @pin.user == current_user %>
@@ -29,7 +31,7 @@
 <div id="comments">
 <% @pin.comments.each do |comment| %>
     <div class="comment">
-        <%= current_user.name %> - <b>"<%= comment.body %>"</b>
+        <%= @pin.user.name %> - <b>"<%= comment.body %>"</b>
        <span class='actions'> 
         <%= link_to 'Delete', [@pin, comment], :confirm => 'Are 
 you sure?', :method => :delete %> 
