@@ -22,9 +22,8 @@
 <p>
 	-<%= @pin.user.name %>
 </p>
-<div class="fb-comments" data-href="http://www.taylorgrohs.herokuapp.com" data-numposts="5"></div>
-
-<!--<% if @pin.user == current_user %>
+<p align="center">
+<% if @pin.user == current_user %>
 <%= link_to edit_pin_path(@pin),  class: "btn btn-primary" do %> 
 <span class="glyphicon glyphicon-edit"></span>Edit
 <% end %>
@@ -33,11 +32,15 @@
  <%= link_to pins_path, class: "btn btn-primary" do %>
  <span class="glyphicon glyphicon-arrow-left"></span> Back
  <% end %>
+</p>
+<div class="fb-comments" data-href="" data-numposts="5"></div>
+
+
 </div>
 </div>
 </div>
 </div>
-<div id="comments">
+<!--<div id="comments">
 <% @pin.comments.each do |comment| %>
     <div class="comment">
         <%= comment.commenter %> - <b>"<%= comment.body %>"</b>
