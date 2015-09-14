@@ -1,11 +1,6 @@
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
+<body>
+
 
 <div class="row">
 	<div align="center">
@@ -33,23 +28,6 @@
  <span class="glyphicon glyphicon-arrow-left"></span> Back
  <% end %>
 </p>
-<script>document.write("<div class='fb-comments' data-href='" + window.location.href + "' data-num-posts='2' data-width='470'></div>");</script>
-
-
-</div>
-</div>
-</div>
-</div>
-<!--<div id="comments">
-<% @pin.comments.each do |comment| %>
-    <div class="comment">
-        <%= comment.commenter %> - <b>"<%= comment.body %>"</b>
-       <span class='actions'> 
-        <%= link_to 'Delete', [@pin, comment], :confirm => 'Are 
-you sure?', :method => :delete %> 
-     
-    </div>
-<% end %>
 <h2>Add a comment</h2>
 <%= form_for ([@pin, @pin.comments.build]) do |f| %>
 	<div class="field">
@@ -65,4 +43,22 @@ you sure?', :method => :delete %>
 	<div class="action">
 		<%= f.submit %>
 	</div>
-<% end %>-->
+<% end %>
+<div id="comments">
+<% @pin.comments.each do |comment| %>
+    <div class="comment">
+        <%= comment.commenter %> - <b>"<%= comment.body %>"</b>
+       <span class='actions'> 
+        <%= link_to 'Delete', @comments,  comments: :destroy %> 
+     </span>
+    </div>
+<% end %>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</body>

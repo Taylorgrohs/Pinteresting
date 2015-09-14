@@ -13,17 +13,17 @@ class CommentsController < ApplicationController
     flash.now[:danger] = "error"
   end
 	def destroy
-    @pin = Pin.find(params[:comment])
-@comment = @pin.comments.find(params[:id])
-###PRINT OUT @comment here ###
-@comment.destroy
-    redirect_to pin_path(@pin)
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to pins_url, notice: 'Comment was successfully destroyed.' }
+    end 
+  end
   end
 
 end
 
 	def comment_params
-		params.require(:comment).permit(:body, :pin, :destroy, :commenter)
+		params.require(:comment).permit(:body, :pin, :commenter)
 	end
-	end
+	
 
